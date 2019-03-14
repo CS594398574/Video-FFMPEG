@@ -1,5 +1,5 @@
 
-// MFC_FFmpegDlg.cpp : ÊµÏÖÎÄ¼ş
+// MFC_FFmpegDlg.cpp : å®ç°æ–‡ä»¶
 //
 
 #include "stdafx.h"
@@ -21,22 +21,22 @@ CString strFilePath;
 string f = "F:\\Recording.txt";
 ofstream  filetxt(f, ios::app);
 string golabl_folder;
-// ÓÃÓÚÓ¦ÓÃ³ÌĞò¡°¹ØÓÚ¡±²Ëµ¥ÏîµÄ CAboutDlg ¶Ô»°¿ò
+// ç”¨äºåº”ç”¨ç¨‹åºâ€œå…³äºâ€èœå•é¡¹çš„ CAboutDlg å¯¹è¯æ¡†
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_ABOUTBOX };
 #endif
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV æ”¯æŒ
 
-// ÊµÏÖ
+// å®ç°
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -54,7 +54,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CMFC_FFmpegDlg ¶Ô»°¿ò
+// CMFC_FFmpegDlg å¯¹è¯æ¡†
 
 
 
@@ -94,15 +94,15 @@ BEGIN_MESSAGE_MAP(CMFC_FFmpegDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CMFC_FFmpegDlg ÏûÏ¢´¦Àí³ÌĞò
+// CMFC_FFmpegDlg æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 BOOL CMFC_FFmpegDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ½«¡°¹ØÓÚ...¡±²Ëµ¥ÏîÌí¼Óµ½ÏµÍ³²Ëµ¥ÖĞ¡£
+	// å°†â€œå…³äº...â€èœå•é¡¹æ·»åŠ åˆ°ç³»ç»Ÿèœå•ä¸­ã€‚
 
-	// IDM_ABOUTBOX ±ØĞëÔÚÏµÍ³ÃüÁî·¶Î§ÄÚ¡£
+	// IDM_ABOUTBOX å¿…é¡»åœ¨ç³»ç»Ÿå‘½ä»¤èŒƒå›´å†…ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -120,17 +120,17 @@ BOOL CMFC_FFmpegDlg::OnInitDialog()
 		}
 	}
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£  µ±Ó¦ÓÃ³ÌĞòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ĞĞ´Ë²Ù×÷
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃĞ¡Í¼±ê
+	// è®¾ç½®æ­¤å¯¹è¯æ¡†çš„å›¾æ ‡ã€‚  å½“åº”ç”¨ç¨‹åºä¸»çª—å£ä¸æ˜¯å¯¹è¯æ¡†æ—¶ï¼Œæ¡†æ¶å°†è‡ªåŠ¨
+	//  æ‰§è¡Œæ­¤æ“ä½œ
+	SetIcon(m_hIcon, TRUE);			// è®¾ç½®å¤§å›¾æ ‡
+	SetIcon(m_hIcon, FALSE);		// è®¾ç½®å°å›¾æ ‡
 
-	// TODO: ÔÚ´ËÌí¼Ó¶îÍâµÄ³õÊ¼»¯´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ é¢å¤–çš„åˆå§‹åŒ–ä»£ç 
 	n_edit4.SetWindowTextW(_T("PI/2"));
 	n_edit5.SetWindowTextW(_T("1080"));
 	n_edit6.SetWindowTextW(_T("1920"));
 	n_edit7.SetWindowTextW(_T("1"));
-	return TRUE;  // ³ı·Ç½«½¹µãÉèÖÃµ½¿Ø¼ş£¬·ñÔò·µ»Ø TRUE
+	return TRUE;  // é™¤éå°†ç„¦ç‚¹è®¾ç½®åˆ°æ§ä»¶ï¼Œå¦åˆ™è¿”å› TRUE
 }
 
 void CMFC_FFmpegDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -146,19 +146,19 @@ void CMFC_FFmpegDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îĞ¡»¯°´Å¥£¬ÔòĞèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£  ¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ĞÍµÄ MFC Ó¦ÓÃ³ÌĞò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
+// å¦‚æœå‘å¯¹è¯æ¡†æ·»åŠ æœ€å°åŒ–æŒ‰é’®ï¼Œåˆ™éœ€è¦ä¸‹é¢çš„ä»£ç 
+//  æ¥ç»˜åˆ¶è¯¥å›¾æ ‡ã€‚  å¯¹äºä½¿ç”¨æ–‡æ¡£/è§†å›¾æ¨¡å‹çš„ MFC åº”ç”¨ç¨‹åºï¼Œ
+//  è¿™å°†ç”±æ¡†æ¶è‡ªåŠ¨å®Œæˆã€‚
 
 void CMFC_FFmpegDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
+		CPaintDC dc(this); // ç”¨äºç»˜åˆ¶çš„è®¾å¤‡ä¸Šä¸‹æ–‡
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Ê¹Í¼±êÔÚ¹¤×÷Çø¾ØĞÎÖĞ¾ÓÖĞ
+		// ä½¿å›¾æ ‡åœ¨å·¥ä½œåŒºçŸ©å½¢ä¸­å±…ä¸­
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -166,7 +166,7 @@ void CMFC_FFmpegDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// »æÖÆÍ¼±ê
+		// ç»˜åˆ¶å›¾æ ‡
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -175,8 +175,8 @@ void CMFC_FFmpegDlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îĞ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊıÈ¡µÃ¹â±ê
-//ÏÔÊ¾¡£
+//å½“ç”¨æˆ·æ‹–åŠ¨æœ€å°åŒ–çª—å£æ—¶ç³»ç»Ÿè°ƒç”¨æ­¤å‡½æ•°å–å¾—å…‰æ ‡
+//æ˜¾ç¤ºã€‚
 HCURSOR CMFC_FFmpegDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -186,20 +186,20 @@ HCURSOR CMFC_FFmpegDlg::OnQueryDragIcon()
 
 void CMFC_FFmpegDlg::OnBnClickedButton1()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 
-	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("È«²¿|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//µ¯³öÒ»¸ö¶Ô»°¿ò
+	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("å…¨éƒ¨|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//å¼¹å‡ºä¸€ä¸ªå¯¹è¯æ¡†
 	
 	if (dlg.DoModal() == IDOK)
 	{
-		strFilePath = dlg.GetPathName();//»ñµÃÎÄ¼şÂ·¾¶		
+		strFilePath = dlg.GetPathName();//è·å¾—æ–‡ä»¶è·¯å¾„		
 	}
 }
 
 
 void CMFC_FFmpegDlg::OnBnClickedButton3()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	n_edit1.GetWindowText(strTemp);
 	n_edit2.GetWindowText(strtemp);
 	string starttime= (CW2A(strTemp.GetString()));
@@ -213,16 +213,16 @@ void CMFC_FFmpegDlg::OnBnClickedButton3()
 	system(output);
 }
 
-
+CString CombinePath;
 void CMFC_FFmpegDlg::OnBnClickedButton2()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
-	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("È«²¿|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//µ¯³öÒ»¸ö¶Ô»°¿ò
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
+	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("å…¨éƒ¨|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//å¼¹å‡ºä¸€ä¸ªå¯¹è¯æ¡†
 
 	if (dlg.DoModal() == IDOK)
 	{
-		strFilePath = dlg.GetPathName();//»ñµÃÎÄ¼şÂ·¾¶
-		string strpath = CW2A(strFilePath);
+		CombinePath = dlg.GetPathName();//è·å¾—æ–‡ä»¶è·¯å¾„
+		string strpath = CW2A(CombinePath);
 		filetxt <<"file"<< " '"<<strpath<<"'"<<endl;
 	}
 
@@ -231,9 +231,9 @@ void CMFC_FFmpegDlg::OnBnClickedButton2()
 
 void CMFC_FFmpegDlg::OnBnClickedButton4()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	char output[200];
-	string strfilesave = CW2A(strFilePath);
+	string strfilesave = CW2A(CombinePath);
 	string strfiledeal = strfilesave + "Concat.mp4";
 	string cmdline = "ffmpeg -f concat -safe 0 -i " + f + " -c copy " +strfiledeal ;
 	string cmdlines = cmdline;
@@ -244,54 +244,55 @@ void CMFC_FFmpegDlg::OnBnClickedButton4()
 
 void CMFC_FFmpegDlg::OnBnClickedButton5()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	fstream file(f, ios::out);
 }
 
-
+CString crop;
 void CMFC_FFmpegDlg::OnBnClickedButton6()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
-	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("È«²¿|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//µ¯³öÒ»¸ö¶Ô»°¿ò
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
+	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("å…¨éƒ¨|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//å¼¹å‡ºä¸€ä¸ªå¯¹è¯æ¡†
 
 	if (dlg.DoModal() == IDOK)
 	{
-		strFilePath = dlg.GetPathName();//»ñµÃÎÄ¼şÂ·¾¶		
+		crop = dlg.GetPathName();//è·å¾—æ–‡ä»¶è·¯å¾„		
 	}
 }
 
 
 void CMFC_FFmpegDlg::OnBnClickedButton7()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString str;
-	n_edit3.GetWindowText(str);  //»ñµÃ²ÎÊıW:H:X:Y
+	n_edit3.GetWindowText(str);  //è·å¾—å‚æ•°W:H:X:Y
 	char output[200];
-	string strfilesave = CW2A(strFilePath);
+	string strfilesave = CW2A(crop);
 	string strtrans = CW2A(str);
-	string strfiledeal = strfilesave + "clips.mp4"; //µÃµ½Êä³öÊÓÆµÂ·¾¶
+	string strfiledeal = strfilesave + "clips.mp4"; //å¾—åˆ°è¾“å‡ºè§†é¢‘è·¯å¾„
 	string cmdline = "ffmpeg -i " + strfilesave + " -strict -2 -vf crop=" + strtrans+" "+strfiledeal;
 	string cmdlines = cmdline;
 	strcpy_s(output, cmdlines.c_str());
 	system(output);
+	
 }
 
-
+CString RotatePath;
 void CMFC_FFmpegDlg::OnBnClickedButton8()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
-	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("È«²¿|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//µ¯³öÒ»¸ö¶Ô»°¿ò
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
+	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("å…¨éƒ¨|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//å¼¹å‡ºä¸€ä¸ªå¯¹è¯æ¡†
 
 	if (dlg.DoModal() == IDOK)
 	{
-		strFilePath = dlg.GetPathName();//»ñµÃÎÄ¼şÂ·¾¶		
+		RotatePath = dlg.GetPathName();//è·å¾—æ–‡ä»¶è·¯å¾„		
 	}
 }
 
 
 void CMFC_FFmpegDlg::OnBnClickedButton9()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString n_str4, n_str5, n_str6;
 	n_edit4.GetWindowText(n_str4);
 	n_edit5.GetWindowText(n_str5);
@@ -300,7 +301,7 @@ void CMFC_FFmpegDlg::OnBnClickedButton9()
 	string angle = (CW2A(n_str4.GetString()));
 	string widthvideo = (CW2A(n_str5.GetString()));
 	string heightvideo = CW2A(n_str6.GetString());
-	string strfilesave = CW2A(strFilePath.GetString());
+	string strfilesave = CW2A(RotatePath.GetString());
 	string strfiledeal = strfilesave + "Rotate.mp4";
 	char output[200];
 	string cmdline = "ffmpeg -i " + strfilesave + " -vf rotate=" + angle + ":ow=" + widthvideo + ":oh=" + heightvideo + " "+strfiledeal;
@@ -309,17 +310,17 @@ void CMFC_FFmpegDlg::OnBnClickedButton9()
 	system(output);
 }
 
-
+CString ClipsPath;
 void CMFC_FFmpegDlg::OnBnClickedButton10()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
-	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("È«²¿|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//µ¯³öÒ»¸ö¶Ô»°¿ò
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
+	CFileDialog dlg(TRUE, _T("*.BMP|*.JPG"), NULL, NULL, _T("å…¨éƒ¨|*.mp4;*.MP4;*.avi|*.MP4|*.mp4;*.MP4|*avi|*.avi||"));//å¼¹å‡ºä¸€ä¸ªå¯¹è¯æ¡†
 
 	if (dlg.DoModal() == IDOK)
 	{
-		strFilePath = dlg.GetPathName();//»ñµÃÎÄ¼şÂ·¾¶		
+		ClipsPath = dlg.GetPathName();//è·å¾—æ–‡ä»¶è·¯å¾„		
 	}
-	golabl_folder = CW2A(strFilePath.GetString());
+	golabl_folder = CW2A(ClipsPath.GetString());
 	golabl_folder = golabl_folder + "img";
 	string command = "mkdir -p " + golabl_folder;
 	char output[100];
@@ -331,14 +332,14 @@ void CMFC_FFmpegDlg::OnBnClickedButton10()
 void CMFC_FFmpegDlg::OnBnClickedButton11()
 {
 	
-	//strFilePath ÊÓÆµÂ·¾¶
-	string videopath = CW2A(strFilePath.GetString());
+	//strFilePath è§†é¢‘è·¯å¾„
+	string videopath = CW2A(ClipsPath.GetString());
 	VideoCapture cap(videopath);
 	double totalframenumber = cap.get(CV_CAP_PROP_FRAME_COUNT);
 	Mat frame;
 	bool flags = true;
 	long currentFrame = 0;
-	cvNamedWindow("²Ã¼ô", (720, 920));
+	cvNamedWindow("è£å‰ª", (720, 920));
 	CString frame_interval;
 	n_edit7.GetWindowText(frame_interval);
 	int n_interval = _ttoi(frame_interval);
@@ -350,7 +351,7 @@ void CMFC_FFmpegDlg::OnBnClickedButton11()
 			continue;
 		}
 		if (currentFrame % n_interval == 0) {
-			imshow("²Ã¼ô", frame);
+			imshow("è£å‰ª", frame);
 			waitKey(1);
 			imwrite(golabl_folder +"\\"+ str.str(), frame);
 		}
