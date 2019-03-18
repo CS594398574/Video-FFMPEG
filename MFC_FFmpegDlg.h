@@ -56,4 +56,9 @@ public:
 	afx_msg void OnBnClickedButton11();
 private:
 	CEdit n_edit7;
+public:
+	afx_msg void OnBnClickedButton12();
+	afx_msg void OnBnClickedButton13();
+	afx_msg void OnBnClickedCancel();
+	afx_msg void OnBnClickedButton14();
 };
