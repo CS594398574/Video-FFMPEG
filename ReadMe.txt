@@ -30,5 +30,6 @@ X:Y原视频裁剪坐标原点。即左上角位置
 综上，所有的处理视频会在原始视频的同一个目录下。
 
 百度网盘（源码和已经编译好的Release版本）：
-链接：https://pan.baidu.com/s/1e__36eRumPEr0KuVQQURLA 
-提取码：dfj6 
+链接：https://pan.baidu.com/s/1w-8votZ3DVhq_BTkeSHx-w 
+提取码：64ti 
+
